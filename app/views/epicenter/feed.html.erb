@@ -1,0 +1,9 @@
+<h1>@<%= current_user.username %>'s Chirpr Feed</h1>
+
+<p>Here is what your friends are saying:</p>
+
+<div>
+	<% @following_chirps.each do |chirp| %>
+		<%= render 'layouts/show_chirp', chirp: chirp %>
+	<% end %>
+</div>
