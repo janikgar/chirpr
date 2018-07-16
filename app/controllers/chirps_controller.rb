@@ -7,11 +7,13 @@ class ChirpsController < ApplicationController
   # GET /chirps.json
   def index
     @chirps = Chirp.all
+    redirect_to root_path
   end
 
   # GET /chirps/1
   # GET /chirps/1.json
   def show
+    redirect_to root_path
   end
 
   # GET /chirps/new

@@ -7,3 +7,9 @@
 		<%= render 'layouts/show_chirp', chirp: chirp %>
 	<% end %>
 </div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+	<div class="col-xs-offset-4 col-xs-4 col-xs-offset-4">
+	<%= link_to "Chirp Something!", new_chirp_path, class: "btn btn-primary btn-lg btn-block" %>
+	</div>
+</nav>

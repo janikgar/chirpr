@@ -3,7 +3,7 @@
 		<div class="pull-left">
 			<%= render 'layouts/show_avatar', :user => chirp.user %>
 		</div>
-		<p><strong>@<%= link_to chirp.user.username, show_user_path(id: chirp.user.id)  %>: </strong></p>
+		<p><strong>@<%= link_to chirp.user.username, show_user_path(username: chirp.user.username)  %>: </strong></p>
 		<p><%= chirp.message.html_safe %></p>
 	</div>
 </div>

@@ -17,10 +17,10 @@ class EpicenterController < ApplicationController
   end
 
   def now_following
-  	current_user.following.push(params[:id].to_i)
+  	current_user.following.push(params[:username].to_i)
   	current_user.save
 
-  	redirect_to show_user_path(id: params[:id])
+  	redirect_to show_user_path(username: params[:username])
   end
 
   def unfollow
