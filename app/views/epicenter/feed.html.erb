@@ -1,5 +1,3 @@
-<h1>@<%= current_user.username %>'s Chirpr Feed</h1>
-
 <p>Here is what your friends are saying:</p>
 
 <div>
@@ -9,7 +7,7 @@
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
-	<div class="col-xs-offset-4 col-xs-4 col-xs-offset-4">
+	<div class="container">
 	<%= link_to "Chirp Something!", new_chirp_path, class: "btn btn-primary btn-lg btn-block" %>
 	</div>
 </nav>

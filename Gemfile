@@ -60,5 +60,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
-gem 'font-awesome-rails'
+# gem 'font-awesome-rails' #OLD font-awesome
+gem 'font-awesome-sass', '~> 5.0.13'
 gem 'mini_magick'
+gem 'google-webfonts', '~> 0.3.2', require: 'google/webfonts/rails'

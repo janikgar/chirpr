@@ -34,9 +34,9 @@ en:
   activerecord:
     attributes:
       chirp:
-        message: "A Chirp"
+        message: "Chirp"
       user:
-        username: "A username"
+        username: "Username"
     errors:
       models:
         chirp:
