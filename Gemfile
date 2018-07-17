@@ -64,3 +64,7 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.0.13'
 gem 'mini_magick'
 gem 'google-webfonts', '~> 0.3.2', require: 'google/webfonts/rails'
+group :test do
+	gem 'cucumber-rails', require: false
+	gem 'database_cleaner'
+end

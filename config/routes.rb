@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'now_following' => 'epicenter#now_following'
   get 'unfollow' => 'epicenter#unfollow'
   get 'new_chirp' => 'chirps#new'
+  get 'chirp_tags' => 'epicenter#chirp_tags'
   resources :chirps
   devise_for :users
 

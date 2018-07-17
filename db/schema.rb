@@ -10,11 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_142316) do
+ActiveRecord::Schema.define(version: 2018_07_17_142914) do
+
+  create_table "chirp_tags", force: :cascade do |t|
+    t.integer "chirp_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "chirps", force: :cascade do |t|
     t.string "message"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "link"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "phrase"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

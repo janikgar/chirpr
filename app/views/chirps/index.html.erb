@@ -14,7 +14,7 @@
   <tbody>
     <% @chirps.each do |chirp| %>
       <tr>
-        <td><%= chirp.message %></td>
+        <td><%= chirp.message.html_safe %></td>
         <td><%= link_to chirp.user.username, show_user_path(id: chirp.user_id) %></td>
         <td><%= link_to 'Show', chirp %></td>
         <td><%= link_to 'Edit', edit_chirp_path(chirp) %></td>

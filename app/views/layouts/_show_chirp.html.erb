@@ -5,5 +5,9 @@
 		</div>
 		<p><strong>@<%= link_to chirp.user.username, show_user_path(username: chirp.user.username)  %>: </strong></p>
 		<p><%= chirp.message.html_safe %></p>
+		<p><em>Posted <%= time_ago_in_words(chirp.created_at) %> ago</em></p>
+		<% if chirp.user == current_user %>
+			<%= link_to "Edit", edit_chirp_path(chirp) %> <%= link_to 'Delete', chirp, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<% end %>
 	</div>
 </div>

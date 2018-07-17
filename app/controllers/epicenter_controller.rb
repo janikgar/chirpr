@@ -17,10 +17,11 @@ class EpicenterController < ApplicationController
   end
 
   def now_following
-  	current_user.following.push(params[:username].to_i)
+    @user = User.find(params[:id])
+  	current_user.following.push(params[:id].to_i)
   	current_user.save
 
-  	redirect_to show_user_path(username: params[:username])
+  	redirect_to show_user_path(username: @user.username)
   end
 
   def unfollow
@@ -28,5 +29,9 @@ class EpicenterController < ApplicationController
   	current_user.save
 
   	redirect_to show_user_path(username: params[:username])
+  end
+
+  def chirp_tags
+    @tag = Tag.find_by(phrase: '#' + params[:phrase])
   end
 end

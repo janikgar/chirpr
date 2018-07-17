@@ -3,6 +3,8 @@ class ChirpsController < ApplicationController
 
   before_action :authenticate_user!
 
+  include ChirpsHelper
+
   # GET /chirps
   # GET /chirps.json
   def index
@@ -23,12 +25,18 @@ class ChirpsController < ApplicationController
 
   # GET /chirps/1/edit
   def edit
+    # TODO: when we edit chirps, make sure the hashtags are added too!
+
+    # @chirp = :chirp
+    # @chirp = get_tagged(@chirp)
   end
 
   # POST /chirps
   # POST /chirps.json
   def create
-    @chirp = Chirp.new(chirp_params)
+    @chirp = Chirp.create(chirp_params)
+
+    @chirp = get_tagged(@chirp)
 
     respond_to do |format|
       if @chirp.save
@@ -73,6 +81,6 @@ class ChirpsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chirp_params
-      params.require(:chirp).permit(:message, :user_id)
+      params.require(:chirp).permit(:message, :user_id, :link)
     end
 end

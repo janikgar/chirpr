@@ -15,33 +15,35 @@
 <body>
   <% if current_user != nil %>
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="glyphicon glyphicon-option-vertical"></span>
           </button>
-          <%= link_to icon('fas', 'crow'), root_path, class: "navbar-brand" %>
-          <h1>Chirpr</h1>
+          <div class="navbar-brand">
+            <span class="brand">
+              <%= link_to "Chirpr", root_path %>
+            </span>
+            <%= link_to icon('fas', 'crow'), root_path %>
+          </div>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav nav-pills nav-justified">
-            <li><%= link_to "Compose New Chirp", new_chirp_path, class: "btn btn-primary btn-sm" %></li>
-            <% if user_signed_in? %>
-                <li><div class="center-block" style="padding: 10px; height: 40px;">
-                  <div class="pull-left" style="width: 20px; height:20px;">
-                  <%= render 'layouts/show_avatar', user: current_user %>
-                </div>
-                <div class="pull-right">
+          <ul class="nav navbar-nav nav-pills">
+            <!-- <li><%= link_to "Chirp!", new_chirp_path, class: "btn btn-default navbar-btn" %></li> -->
+            <li><%= link_to "Feed", root_path %></li>
+            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <li>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <p class="navbar-text">
                   Signed in as: <strong>@<%= current_user.username %></strong>
-                </div>
-              </div>
-              </li>
-              <li><%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-default btn-sm" %></li>
-              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-default btn-sm" %></li>
-            <% end %>
+                  <span class="small-avatar"><%= render 'layouts/show_avatar', user: current_user %></span>
+                  </p>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -50,6 +52,13 @@
   <div class="container">
     <p id="notice"><%= notice %></p>
     <%= yield %>
+    <% if current_user %>
+      <nav class="navbar navbar-default navbar-fixed-bottom  visible-xs visible-sm">
+        <div class="container">
+        <%= link_to "Chirp Something!", new_chirp_path, class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      </nav>
+    <% end %>
   </div>
 </body>
 </html>
