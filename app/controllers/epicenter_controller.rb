@@ -12,6 +12,20 @@ class EpicenterController < ApplicationController
   	end
   end
 
+  def whats_trending
+    @top_hashtags = Tag.all.joins(:chirp_tags)
+      .group(:phrase)
+      .order("COUNT(phrase) desc")
+      .limit(3)
+      .pluck(:phrase, "COUNT(phrase)")
+    @top_chirpr = User.find(
+      Chirp.all.joins(:user)
+      .group(:username)
+      .order("COUNT(username) desc")
+      .limit(1).pluck(:user_id)[0]
+    )
+  end
+
   def following
     @user = User.find_by(username: params[:username])
     @users = []

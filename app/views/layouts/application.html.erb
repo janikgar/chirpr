@@ -32,6 +32,7 @@
           <ul class="nav nav-pills">
             <li><%= link_to "Feed", root_path %></li>
             <li><%= link_to "All Users", all_users_path %></li>
+            <li><%= link_to "What's Trending", whats_trending_path %></li>
             <li><%= link_to "Followers", followers_path(username: current_user.username) %></li>
             <li><%= link_to "Following", following_path(username: current_user.username) %></li>
             <li><%= link_to "Edit Profile", edit_user_registration_path %></li>

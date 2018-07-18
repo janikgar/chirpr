@@ -1,10 +1,17 @@
 <div class="row">
-  <% @users.each do |user| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="well">
-        <%= render 'user_badge', user: user %>
-        <%= render 'user_stats', user: user %>
+  <% @users.each_with_index do |user, index| %>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= render 'user_badge', user: user %>
+        </div>
+        <div class="panel-body">
+          <%= render 'user_stats', user: user %>
+        </div>
       </div>
     </div>
+    <% if index % 2 == 1 %>
+      <div class="clearfix"></div>
+    <% end %>
   <% end %>
 </div>

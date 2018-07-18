@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'epicenter#feed'
 
+  get 'whats_trending' => 'epicenter#whats_trending'
   get 'following' => 'epicenter#following' # Who the user is following
   get 'followers' => 'epicenter#followers' #Who is following the user
   get 'all_users' => 'epicenter#all_users'
