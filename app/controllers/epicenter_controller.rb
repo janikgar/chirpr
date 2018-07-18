@@ -13,7 +13,7 @@ class EpicenterController < ApplicationController
   end
 
   def following
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:username])
     @users = []
 
     User.all.each do |user|
@@ -24,7 +24,7 @@ class EpicenterController < ApplicationController
   end
 
   def followers
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:username])
     @users = []
     User.all.each do |user|
       if user.following.include?(@user.id)

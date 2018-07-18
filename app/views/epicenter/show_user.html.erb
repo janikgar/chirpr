@@ -1,19 +1,12 @@
-<%= render 'layouts/show_avatar', :user => @user %>
-<p><strong><%= @user.name %></strong></p>
-<p><%= @user.username %><br />
-	<%= @user.location %></p>
-<p><%= @user.bio %></p>
-
-<p>
-	<% if current_user.following.include? (@user.id) %>
-		<%= link_to "Following", unfollow_path(id: @user.id), class: "btn btn-primary", id: "unfollow_btn" %>
-	<% else %>
-		<% if current_user.id != @user.id %>
-			<%= link_to "Follow", now_following_path(id: @user.id), class: "btn btn-primary" %>
-		<% end %>
+<div class="panel">
+	<div class="panel-heading">
+		<%= render 'user_badge', user: @user %>
+	</div>
+	<div class="panel-body">
+	<% @user.chirps.each do |chirp| %>
+		<div class="well">
+			<%= render 'layouts/show_chirp', chirp: chirp %>
+		</div>
 	<% end %>
-</p>
-
-<% @user.chirps.each do |chirp| %>
-	<%= render 'layouts/show_chirp', chirp: chirp %>
-<% end %>
+	</div>
+</div>

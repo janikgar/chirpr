@@ -30,11 +30,10 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav nav-pills">
-            <!-- <li><%= link_to "Chirp!", new_chirp_path, class: "btn btn-default navbar-btn" %></li> -->
             <li><%= link_to "Feed", root_path %></li>
             <li><%= link_to "All Users", all_users_path %></li>
-            <li><%= link_to "Followers", followers_path(id: current_user.id) %></li>
-            <li><%= link_to "Following", following_path(id: current_user.id) %></li>
+            <li><%= link_to "Followers", followers_path(username: current_user.username) %></li>
+            <li><%= link_to "Following", following_path(username: current_user.username) %></li>
             <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <li>
@@ -52,16 +51,16 @@
       </div>
     </nav>
     <% end %>
-  <div class="container">
-    <p id="notice"><%= notice %></p>
-    <%= yield %>
-    <% if current_user %>
-      <nav class="navbar navbar-default navbar-fixed-bottom  visible-xs visible-sm">
-        <div class="container">
-        <%= link_to "Chirp Something!", new_chirp_path, class: "btn btn-primary btn-lg btn-block" %>
+  <div class="container col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+    <div class="">
+      <p id="notice"><%= notice %></p>
+      <%= yield %>
+      <% if current_user %>
+        <div class="chirp-btn">
+          <%= link_to "Chirp Something!", new_chirp_path, class: "btn btn-primary btn-lg" %>
         </div>
-      </nav>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </body>
 </html>
