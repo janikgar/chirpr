@@ -1,0 +1,17 @@
+<ul class="list-group">
+	<li class="list-group-item">
+		# of chirps: <%= user.chirps.length %>
+	</li>
+	<li class="list-group-item">
+		# following: <%= user.following.length %>
+	</li>
+	<li class="list-group-item">
+		<% followers = 0
+	    User.all.each do |this_user|
+	      if this_user.following.include?(user.id)
+	        followers += 1
+	      end
+	    end %>
+		# of followers: <%= followers %>
+	</li>
+</ul>

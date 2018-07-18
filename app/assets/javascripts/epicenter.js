@@ -8,11 +8,11 @@ $(document).on('turbolinks:load', function() {
 		$(this).removeClass('btn-danger');
 		$(this).addClass('btn-primary');
 	});
-	var currentPage = document.location.pathname
-	var menuLinks = $('.navbar-fixed-top ul li a')
-	for (var i = 0; i < menuLinks.length; i++) {
-		if (menuLinks[i].pathname == currentPage) {
-			menuLinks[i].classList.add('active');
+	var currentPage = document.location.pathname;
+	var menuLinks = $('.navbar-fixed-top ul li a');
+	menuLinks.each(function(){
+		if ($(this)[0].pathname == currentPage) {
+			$(this).parent().addClass('active');
 		}
-	}
+	});
 });
