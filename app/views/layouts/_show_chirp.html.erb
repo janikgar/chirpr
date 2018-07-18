@@ -3,9 +3,11 @@
 		<div class="pull-left">
 			<%= render 'layouts/show_avatar', :user => chirp.user %>
 		</div>
-		<p><strong>@<%= link_to chirp.user.username, show_user_path(username: chirp.user.username)  %>: </strong></p>
+		<% chirp_time = "" %>
+		<% Time.now - chirp.created_at <86400 ? chirp_time = time_ago_in_words(chirp.created_at) + 
+		" ago" : chirp_time = chirp.created_at.strftime('%b %e') %>
+		<p><strong>@<%= link_to chirp.user.username, show_user_path(username: chirp.user.username)  %></strong> &#8226; <em><%= chirp_time %></em></p>
 		<p><%= chirp.message.html_safe %></p>
-		<p><em>Posted <%= time_ago_in_words(chirp.created_at) %> ago</em></p>
 		<% if chirp.user == current_user %>
 			<%= link_to "Edit", edit_chirp_path(chirp) %> <%= link_to 'Delete', chirp, method: :delete, data: { confirm: 'Are you sure?' } %>
 		<% end %>

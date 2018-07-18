@@ -42,6 +42,9 @@ h6 {
 	font-family: "Lobster", "Zapf Chancery", sans-serif;
 	color: $primary-color;
 	font-size: 36px;
+	:hover {
+		text-decoration: none;
+	}
 }
 
 .avatar {
