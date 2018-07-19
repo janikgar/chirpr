@@ -1,15 +1,17 @@
 <div class="well">
 	<div class="row">
-		<div class="pull-left">
+		<div class="col-xs-4 col-sm-3">
 			<%= render 'layouts/show_avatar', :user => chirp.user %>
 		</div>
-		<% chirp_time = "" %>
-		<% Time.now - chirp.created_at <86400 ? chirp_time = time_ago_in_words(chirp.created_at) + 
-		" ago" : chirp_time = chirp.created_at.strftime('%b %e') %>
-		<p><strong>@<%= link_to chirp.user.username, show_user_path(username: chirp.user.username)  %></strong> &#8226; <em><%= chirp_time %></em></p>
-		<p><%= chirp.message.html_safe %></p>
-		<% if chirp.user == current_user %>
-			<%= link_to "Edit", edit_chirp_path(chirp) %> <%= link_to 'Delete', chirp, method: :delete, data: { confirm: 'Are you sure?' } %>
-		<% end %>
+		<div class="col-xs-8 col-sm-9">
+			<% chirp_time = "" %>
+			<% Time.now - chirp.created_at <86400 ? chirp_time = time_ago_in_words(chirp.created_at) + 
+			" ago" : chirp_time = chirp.created_at.strftime('%b %e') %>
+			<p><strong>@<%= link_to chirp.user.username, show_user_path(username: chirp.user.username)  %></strong> &#8226; <em><%= chirp_time %></em></p>
+			<p class="lead"><%= chirp.message.html_safe %></p>
+			<% if chirp.user == current_user %>
+				<%= link_to "Edit", edit_chirp_path(chirp) %> <%= link_to 'Delete', chirp, method: :delete, data: { confirm: 'Are you sure?' } %>
+			<% end %>
+		</div>
 	</div>
 </div>
