@@ -1,0 +1,211 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2018-07-16 13:23:05.589617'
+    - '2018-07-16 13:23:05.589617'
+
+---
+chirp_tags:
+  columns:
+  - id
+  - chirp_id
+  - tag_id
+  - created_at
+  - updated_at
+  records: 
+  - - 14
+    - 26
+    - 4
+    - '2018-07-17 21:35:03.131269'
+    - '2018-07-17 21:35:03.131269'
+  - - 15
+    - 27
+    - 4
+    - '2018-07-17 21:36:30.129865'
+    - '2018-07-17 21:36:30.129865'
+  - - 16
+    - 28
+    - 5
+    - '2018-07-18 21:29:48.139341'
+    - '2018-07-18 21:29:48.139341'
+  - - 17
+    - 29
+    - 6
+    - '2018-07-18 22:02:43.305398'
+    - '2018-07-18 22:02:43.305398'
+  - - 18
+    - 30
+    - 4
+    - '2018-07-18 22:02:59.440253'
+    - '2018-07-18 22:02:59.440253'
+  - - 19
+    - 31
+    - 6
+    - '2018-07-18 22:03:45.067309'
+    - '2018-07-18 22:03:45.067309'
+
+---
+chirps:
+  columns:
+  - id
+  - message
+  - user_id
+  - created_at
+  - updated_at
+  - link
+  records: 
+  - - 26
+    - This is my first post on <a href='/chirp_tags?phrase=chirpr''>#chirpr</a>! Where's
+      everyone at?
+    - 1
+    - '2018-07-15 21:35:03.061271'
+    - '2018-07-18 14:32:31.982210'
+    - 
+  - - 27
+    - I'm on <a href='/chirp_tags?phrase=chirpr''>#chirpr</a>, too!
+    - 2
+    - '2018-07-17 21:36:30.100865'
+    - '2018-07-17 21:36:30.157862'
+    - 
+  - - 28
+    - How is this different than <a href='/chirp_tags?phrase=twitter''>#twitter</a>?
+    - 1
+    - '2018-07-18 21:29:48.091324'
+    - '2018-07-18 21:29:48.160330'
+    - 
+  - - 29
+    - Seems better than <a href='/chirp_tags?phrase=facebook''>#facebook</a>.
+    - 1
+    - '2018-07-18 22:02:43.239395'
+    - '2018-07-18 22:02:43.330397'
+    - 
+  - - 30
+    - "<a href='/chirp_tags?phrase=chirpr''>#chirpr</a> all the way!"
+    - 1
+    - '2018-07-18 22:02:59.396244'
+    - '2018-07-18 22:02:59.461246'
+    - 
+  - - 31
+    - What if I told you <a href='/chirp_tags?phrase=facebook''>#facebook</a> was
+      tracking you?
+    - 1
+    - '2018-07-18 22:03:45.030125'
+    - '2018-07-18 22:03:45.088308'
+    - 
+
+---
+tags:
+  columns:
+  - id
+  - phrase
+  - created_at
+  - updated_at
+  records: 
+  - - 4
+    - "#chirpr"
+    - '2018-07-17 21:35:03.094255'
+    - '2018-07-17 21:35:03.094255'
+  - - 5
+    - "#twitter"
+    - '2018-07-18 21:29:48.113327'
+    - '2018-07-18 21:29:48.113327'
+  - - 6
+    - "#facebook"
+    - '2018-07-18 22:02:43.278395'
+    - '2018-07-18 22:02:43.278395'
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  - name
+  - username
+  - bio
+  - location
+  - avatar
+  - following
+  records: 
+  - - 1
+    - test@example.com
+    - "$2a$11$51fym4oRqMv2gcJQwE0D6OFZXZ0MaWfXVx00QZ2PEcTlnBE0liQO2"
+    - 
+    - 
+    - 
+    - 15
+    - '2018-07-18 23:56:24.487207'
+    - '2018-07-18 19:19:35.547817'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2018-07-16 13:49:53.047429'
+    - '2018-07-18 23:56:24.490233'
+    - Jacob Garcia
+    - jacob
+    - I'm learning to code
+    - New Orleans
+    - DM.jpg
+    - |
+      ---
+      - 2
+  - - 2
+    - test2@example.com
+    - "$2a$11$pFJInoco57qp/H9aNIPsx.Ek8BwgTCIdTn5Mm6qzbD6BGp57EhDQi"
+    - 
+    - 
+    - 
+    - 7
+    - '2018-07-18 15:12:55.569551'
+    - '2018-07-17 21:35:25.758697'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2018-07-16 15:01:44.952521'
+    - '2018-07-18 15:12:55.569551'
+    - Shadow Jacob
+    - shadow-jacob
+    - I'm a vampire
+    - Not New Orleans
+    - skiing.jpg
+    - |
+      ---
+      - 1
+  - - 3
+    - test3@example.com
+    - "$2a$11$RdelYjBVCL1tp.QIlPIOMeTnSUwBDzwyTA4eRFFGN.R5q.NGKZoGG"
+    - 
+    - 
+    - 
+    - 1
+    - '2018-07-18 17:20:54.146536'
+    - '2018-07-18 17:20:54.146536'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2018-07-18 17:20:54.092533'
+    - '2018-07-18 17:21:16.400489'
+    - Not Jacob
+    - notjacob
+    - I'm Not Jacob
+    - Not Not New Orleans
+    - 05_10_2007_rain_run.jpg
+    - |
+      ---
+      - 1
+      - 2
