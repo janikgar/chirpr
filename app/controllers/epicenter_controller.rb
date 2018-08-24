@@ -18,6 +18,7 @@ class EpicenterController < ApplicationController
       .order("COUNT(phrase) desc")
       .limit(3)
       .pluck(:phrase, "COUNT(phrase)")
+      @top_chirpr = User.first
     @top_chirpr = User.find(
       Chirp.all.joins(:user)
       .group(:username)
